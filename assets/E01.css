@@ -1,0 +1,127 @@
+/* E01 — Vitrine editorial. Mecânica comum em core.css. Marca: --brand (principal), --brand2 (acento), --brand-ink (tinta escura). */
+:root{--bg:#f6efe6;--paper:#fffaf3;--ink:var(--brand-ink);--muted:#6f6158;--surface:#fffaf3;--line:rgba(46,33,25,.16);
+  --accent:var(--brand);--accent-ink:#fff;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Jost',system-ui,sans-serif;
+  --display-weight:500;--wa-bg:#1f7a4a;--wa-ink:#fff;--wa-hover:#18643c;--btn-radius:0;--btn-case:uppercase;--btn-track:.12em;--btn-size:.78rem;
+  --header-bg:rgba(246,239,230,.92);--tab-on-bg:var(--brand-ink)}
+body{font-weight:400}
+.e1-kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--brand);margin:0 0 1em;display:flex;gap:.8em;align-items:center;flex-wrap:wrap;justify-content:inherit}
+.e1-narrow{max-width:760px;margin:0 auto;padding:0 22px;text-align:center}
+.e1-header{backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.e1-header .brand-logo{width:40px;height:40px}
+.e1-header .site-nav a{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase}
+.btn-ghost{border-color:currentColor}
+/* hero dividido */
+.e1-hero{display:grid;grid-template-columns:1fr;background:var(--bg)}
+.e1-hero-photo{margin:0;height:58vh;min-height:320px;overflow:hidden}
+.e1-hero-photo img{width:100%;height:100%;object-fit:cover}
+.e1-hero-panel{padding:36px 22px 44px;background:var(--paper);position:relative}
+.e1-hero-top{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.e1-emblem{width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line)}
+.e1-wordmark{font-family:var(--font-display);font-size:2rem;margin:0;letter-spacing:.06em}
+.e1-eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin:0}
+.e1-hero h1{font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.02;margin-bottom:.4em}
+.e1-lead{color:var(--muted);font-size:1.02rem;max-width:34em}
+.e1-chips{list-style:none;display:flex;flex-wrap:wrap;gap:4px 0;margin:0 0 26px;padding-top:10px;border-top:1px solid var(--line)}
+.e1-chips li{font-size:.78rem;letter-spacing:.08em;color:var(--muted)}
+.e1-chips li+li::before{content:"·";margin:0 .7em;color:var(--brand2)}
+.e1-index ol{list-style:none;border-top:1px solid var(--line)}
+.e1-index a{display:flex;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--font-display);font-size:1.3rem}
+.e1-index a:hover{color:var(--brand)}
+.e1-idx{font-family:var(--font-body);font-size:.7rem;letter-spacing:.2em;color:var(--brand2)}
+@media (min-width:960px){
+  .e1-hero{grid-template-columns:1.25fr 1fr;min-height:calc(100vh - 68px)}
+  .e1-hero-photo{height:auto;min-height:100%}
+  .e1-hero-panel{padding:56px 56px 56px;display:flex;flex-direction:column;justify-content:center}
+}
+/* sobre editorial */
+.e1-sobre{padding:96px 0 72px;background:var(--bg)}
+.e1-sobre h2{font-size:clamp(2rem,4vw,3rem)}
+.e1-intro{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.45}
+.e1-sign{font-family:var(--font-display);font-style:italic;color:var(--brand);font-size:1.2rem;margin-top:1.4em}
+.e1-sign::before{content:"";display:block;width:60px;height:1px;background:var(--brand2);margin:0 auto 1.2em}
+/* destaques em linhas alternadas */
+.e1-dest{padding:40px 0 0;background:var(--bg)}
+.e1-dest h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:40px}
+.e1-rows{list-style:none}
+.e1-row{display:grid;grid-template-columns:1fr}
+.e1-row-media{margin:0;min-height:300px;overflow:hidden}
+.e1-row-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;max-height:70vh}
+.e1-row-block{display:grid;place-items:center;background:var(--brand);color:var(--paper);font-family:var(--font-display);font-size:5rem}
+.e1-row-text{padding:40px 24px 48px;background:var(--paper);display:flex;flex-direction:column;justify-content:center}
+.e1-row:nth-child(even) .e1-row-text{background:var(--brand-ink);color:var(--paper)}
+.e1-row:nth-child(even) .e1-row-text p{color:rgba(255,250,243,.8)}
+.e1-num{font-family:var(--font-display);font-size:3.2rem;color:var(--brand2);line-height:1}
+.e1-row-text h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin:.3em 0 .4em}
+.e1-row-text p{color:var(--muted);max-width:30em;margin:0}
+@media (min-width:860px){
+  .e1-row{grid-template-columns:1fr 1fr;min-height:440px}
+  .e1-flip .e1-row-media{order:2}
+  .e1-row-media{height:min(560px,42vw);min-height:0}
+  .e1-row-media img{aspect-ratio:auto;height:100%}
+  .e1-row-text{padding:56px 8vw 56px 64px}
+}
+/* cardápio = carta impressa */
+.e1-menu{position:relative;padding:0 0 88px;background:var(--bg)}
+.e1-menu .amb-menu{height:300px}
+.e1-menu .amb::after{background:rgba(46,33,25,.45)}
+.e1-menu .amb-tag{top:10px;bottom:auto}
+.e1-paper{position:relative;z-index:1;max-width:1000px;margin:180px auto 0;background:var(--paper);padding:44px 24px;outline:1px solid var(--line);outline-offset:-12px;box-shadow:0 30px 60px rgba(46,33,25,.12)}
+.e1-paper-head{text-align:center;justify-content:center;margin-bottom:8px}
+.e1-paper-head .e1-kicker{justify-content:center}
+.e1-paper-head h2{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:.2em}
+.e1-paper-head p{color:var(--muted)}
+.e1-paper .sim-notice{margin:20px auto 28px;max-width:720px}
+.e1-paper .menu-panel{background:transparent;border:0;padding:0;margin:0 0 30px;break-inside:avoid}
+.e1-paper .menu-cat{font-size:1.5rem;justify-content:center;text-align:center;border-bottom:1px solid var(--line);padding-bottom:.4em}
+.e1-paper .menu-list{grid-template-columns:1fr!important}
+.e1-paper .mi{grid-template-columns:auto 1fr auto;border-bottom:0;padding:9px 0}
+.e1-paper .mi::after{content:"";grid-column:2;grid-row:1;border-bottom:1px dotted rgba(46,33,25,.35);margin:0 8px .45em;align-self:end}
+.e1-paper .mi-name{grid-column:1;grid-row:1}
+.e1-paper .mi-price{grid-column:3;grid-row:1;color:var(--brand)}
+.e1-paper .mi-desc{grid-column:1/-1;grid-row:2;font-size:.85rem}
+@media (min-width:860px){.e1-paper{padding:60px 64px;display:grid;grid-template-columns:1fr 1fr;column-gap:56px;align-items:start}
+  .e1-paper > :not(.menu-panel){grid-column:1/-1}}
+.e1-paper .menu-cta{text-align:center}
+/* pedidos (faixa escura) */
+.e1-orders{background:var(--brand-ink);color:var(--paper);padding:84px 0}
+.e1-orders .e1-kicker{color:var(--brand2)}
+.e1-orders h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+.e1-orders p{color:rgba(255,250,243,.82)}
+.e1-orders-grid{display:grid;gap:40px}
+@media (min-width:900px){.e1-orders-grid{grid-template-columns:1.1fr 1fr;gap:80px}}
+.e1-orders .app-link{background:transparent;color:var(--paper);border-color:rgba(255,250,243,.35)}
+.e1-orders .order-links{margin-top:22px}
+.e1-steps{counter-reset:s;list-style:none;margin:0 0 26px}
+.e1-steps li{counter-increment:s;padding:14px 0 14px 54px;position:relative;border-bottom:1px solid rgba(255,250,243,.15)}
+.e1-steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:10px;font-family:var(--font-display);font-size:1.6rem;color:var(--brand2)}
+.e1-kv div{display:flex;flex-wrap:wrap;gap:4px 12px;padding:10px 0;border-bottom:1px solid rgba(255,250,243,.12);font-size:.92rem}
+.e1-kv dt{font-weight:500;color:var(--brand2)}.e1-kv dd{margin:0}
+.e1-orders a{color:inherit}
+/* avaliação */
+.e1-review{padding:96px 0;background:var(--paper)}
+.e1-quote-mark{font-family:var(--font-display);font-size:7rem;line-height:.6;color:var(--brand2);margin:0}
+.e1-review h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.e1-review p{color:var(--muted)}
+/* contato */
+.e1-contact{padding:88px 0;background:var(--bg)}
+.e1-contact-grid{display:grid;gap:0;border-top:1px solid var(--ink)}
+.e1-contact-head{padding:28px 0}
+.e1-contact-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:0}
+.e1-contact .ct-card{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:24px 0}
+.e1-contact .ct-card h3{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;font-family:var(--font-body);color:var(--brand)}
+.e1-contact .ct-addr p{font-family:var(--font-display);font-size:1.5rem;line-height:1.3}
+@media (min-width:900px){.e1-contact-grid{grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:0 36px}.e1-contact .ct-card{border-top:0}}
+/* CTA final */
+.e1-cta{position:relative;padding:130px 0;color:#fff;text-align:center;overflow:hidden}
+.e1-cta .amb::after{background:rgba(30,20,14,.6)}
+.e1-cta-inner{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 22px}
+.e1-cta h2{font-size:clamp(2.4rem,5vw,4rem)}
+.e1-cta .hero-ctas{justify-content:center}
+.e1-cta .btn-ghost{color:#fff}
+/* rodapé */
+.e1-footer{text-align:center;background:var(--brand-ink);color:var(--paper)}
+.e1-foot-logo{width:110px;height:110px;border-radius:50%;margin:0 auto 18px;object-fit:cover}
+.e1-footer .f-links{justify-content:center;margin:20px 0}
+.e1-footer p{opacity:.85;font-size:.9rem;margin:0 0 .4em}
+.e1-footer .f-name{font-family:var(--font-display);font-size:1.4rem;opacity:1}
+.e1-paper .mi:not(:has(.mi-price))::after{display:none}
